@@ -1,0 +1,333 @@
+@prefix ex:     <http://example.org/disaster#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms:<http://purl.org/dc/terms/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# 최상위 클래스
+ex:위기경보수준별조치사항
+    a              rdfs:Class ;
+    rdfs:label     "위기경보 수준별 조치사항"@ko ;
+    ex:페이지정보   "1" .
+
+# 레벨 1 : 관심
+ex:위기경보수준별조치사항_1_관심
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    rdfs:label     "관심"@ko ;
+    ex:페이지정보   "2" .
+
+ex:위기경보수준별조치사항_1_관심_가_상황
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_1_관심 ;
+    rdfs:label     "상황"@ko ;
+    ex:페이지정보   "2" .
+
+ex:위기경보수준별조치사항_1_관심_나_조치목록_및_내용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_1_관심 ;
+    rdfs:label     "조치목록 및 내용"@ko ;
+    ex:페이지정보   "2" .
+
+# 레벨 1 : 주의
+ex:위기경보수준별조치사항_2_주의
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    rdfs:label     "주의"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_가_상황
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의 ;
+    rdfs:label     "상황"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_조치목록_및_내용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의 ;
+    rdfs:label     "조치목록 및 내용"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_1_경보_및_상황_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_조치목록_및_내용 ;
+    rdfs:label     "경보 및 상황 접수"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_1_1_‘주의’_경보_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_1_경보_및_상황_접수 ;
+    rdfs:label     "‘주의’ 경보 접수"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_1_2_재난발생_상황_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_1_경보_및_상황_접수 ;
+    rdfs:label     "재난발생 상황 접수"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_2_보고_및_전파
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_조치목록_및_내용 ;
+    rdfs:label     "보고 및 전파"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_2_1_보고
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_2_보고_및_전파 ;
+    rdfs:label     "보고"@ko ;
+    ex:페이지정보   "58" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_조치
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_조치목록_및_내용 ;
+    rdfs:label     "조치"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "2단계 상황판단회의 개최"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_2_피해현황_및_현장대응_상황_파악
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "피해현황 및 현장대응 상황 파악"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_3_재난현장_필요사항_파악_및_지원계획_수립
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "재난현장 필요사항 파악 및 지원계획 수립"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_4_재난발생_및_대응조치_진행상황_종합정리
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "재난발생 및 대응조치 진행상황 종합정리"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_5_피해확산_방지_방안_마련
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "피해확산 방지 방안 마련"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_6_경영진_지시_및_상황판단회의_결정사항_이행
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "경영진 지시 및 상황판단회의 결정사항 이행"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_7_응급복구자원_지원_준비
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "응급복구자원 지원 준비"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_8_유관기관_협업체계_점검_및_확인
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "유관기관 협업체계 점검 및 확인"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_9_재난대응활동에_필요한_행정적_지원_준비
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "재난대응활동에 필요한 행정적 지원 준비"@ko ;
+    ex:페이지정보   "71" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_10_언론_모니터링_및_오보대응
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "언론 모니터링 및 오보대응"@ko ;
+    ex:페이지정보   "71" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_11_보도자료_작성
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "보도자료 작성"@ko ;
+    ex:페이지정보   "71" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_12_비상근무_상향_조정
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_조치 ;
+    rdfs:label     "비상근무 상향 조정"@ko ;
+    ex:페이지정보   "64" .
+
+# 레벨 1 : 경계
+ex:위기경보수준별조치사항_3_경계
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    rdfs:label     "경계"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_가_상황
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계 ;
+    rdfs:label     "상황"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_조치목록_및_내용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계 ;
+    rdfs:label     "조치목록 및 내용"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_1_경보_및_상황_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_조치목록_및_내용 ;
+    rdfs:label     "경보 및 상황 접수"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_1_1_‘경계’_경보_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_1_경보_및_상황_접수 ;
+    rdfs:label     "‘경계’ 경보 접수"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_3_경계_나_1_2_풍수해_추가_피해발생_상황_접수
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_1_경보_및_상황_접수 ;
+    rdfs:label     "풍수해 추가 피해발생 상황 접수"@ko ;
+    ex:페이지정보   "64" .
+
+ex:위기경보수준별조치사항_3_경계_나_2_보고_및_전파
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_조치목록_및_내용 ;
+    rdfs:label     "보고 및 전파"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_2_1_보고
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_2_보고_및_전파 ;
+    rdfs:label     "보고"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_2_2_지역본부_및_사업소_상황_전파
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_2_보고_및_전파 ;
+    rdfs:label     "지역본부 및 사업소 상황 전파"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_2_3_유관기관_상황_전파
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_2_보고_및_전파 ;
+    rdfs:label     "유관기관 상황 전파"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_3_조치
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_조치목록_및_내용 ;
+    rdfs:label     "조치"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_3_1_2단계_상황판단회의_개최
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_3_조치 ;
+    rdfs:label     "2단계 상황판단회의 개최"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_3_2_피해현황_및_현장대응_상황_파악
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_3_조치 ;
+    rdfs:label     "피해현황 및 현장대응 상황 파악"@ko ;
+    ex:페이지정보   "63" .
+
+ex:위기경보수준별조치사항_3_경계_나_3_3_재난현장_필요사항_파악_및_지원계획_수립
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계_나_3_조치 ;
+    rdfs:label     "재난현장 필요사항 파악 및 지원계획 수립"@ko ;
+    ex:페이지정보   "63" .
+
+# 레벨 1 : 심각
+ex:위기경보수준별조치사항_4_심각
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    rdfs:label     "심각"@ko ;
+    ex:페이지정보   "81" .
+
+ex:위기경보수준별조치사항_4_심각_가_상황
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각 ;
+    rdfs:label     "상황"@ko ;
+    ex:페이지정보   "81" .
+
+ex:위기경보수준별조치사항_4_심각_나_조치목록_및_내용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각 ;
+    rdfs:label     "조치목록 및 내용"@ko ;
+    ex:페이지정보   "81" .
+
+# — 추가 보완 subclass (2단계: 문서 세부 내용 중 추가 확인된 개념) —
+
+# 예: 2단계 상황판단회의 관련 실무반, 주관부서 등
+ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최_회의_소집
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최 ;
+    rdfs:label     "회의 소집"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최_회의_참석_인원
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최 ;
+    rdfs:label     "회의 참석 인원"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최_회의_주요내용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_1_2단계_상황판단회의_개최 ;
+    rdfs:label     "회의 주요내용"@ko ;
+    ex:페이지정보   "67" .
+
+# 피해현황 및 현장 대응 상황 파악 세부항목
+ex:위기경보수준별조치사항_2_주의_나_3_2_1_재난발생_건설현장_및_임대주택_관리실_통해_상황_파악
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_2_피해현황_및_현장대응_상황_파악 ;
+    rdfs:label     "재난발생 건설현장 및 임대주택 관리실 통해 상황 파악"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_2_2_유무선_전화_LH_재난대응시스템_활용
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_2_피해현황_및_현장대응_상황_파악 ;
+    rdfs:label     "유·무선 전화, LH 재난대응시스템 활용"@ko ;
+    ex:페이지정보   "67" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_2_3_재난발생_지역_CCTV_확인
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_2_피해현황_및_현장대응_상황_파악 ;
+    rdfs:label     "재난발생 지역 내 CCTV 확인"@ko ;
+    ex:페이지정보   "67" .
+
+# 재난현장 필요사항 파악 및 지원계획 수립 세부 항목
+ex:위기경보수준별조치사항_2_주의_나_3_3_1_재난현장_대응활동_필요_자원_현황_파악
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_3_재난현장_필요사항_파악_및_지원계획_수립 ;
+    rdfs:label     "재난현장 대응활동에 필요한 자원 현황 파악"@ko ;
+    ex:페이지정보   "68" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_3_2_주관_부서
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_3_재난현장_필요사항_파악_및_지원계획_수립 ;
+    rdfs:label     "주관 부서"@ko ;
+    ex:페이지정보   "68" .
+
+# 언론 모니터링 및 오보대응 세부 항목
+ex:위기경보수준별조치사항_2_주의_나_3_10_1_언론_모니터링
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_10_언론_모니터링_및_오보대응 ;
+    rdfs:label     "언론 모니터링"@ko ;
+    ex:페이지정보   "71" .
+
+ex:위기경보수준별조치사항_2_주의_나_3_10_2_오보대응
+    a              rdfs:Class ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_2_주의_나_3_10_언론_모니터링_및_오보대응 ;
+    rdfs:label     "오보대응"@ko ;
+    ex:페이지정보   "71" .
+
+# 재난대응 관련 연락처 및 담당자 정보 (가장 상세한 수준은 인명조치 등 실무 정보이므로 보완)
+ex:위기경보수준별조치사항_연락처_및_담당자_정보
+    a              rdfs:Class ;
+    rdfs:label     "연락처 및 담당자 정보"@ko ;
+    ex:페이지정보   "55" .# End of TTL File
