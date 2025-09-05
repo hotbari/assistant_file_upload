@@ -1,0 +1,103 @@
+@prefix ex:      <http://example.org/disaster#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+###### 위기경보수준별조치사항 최상위 클래스 정의
+
+ex:위기경보수준별조치사항 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항"@ko ;
+    dcterms:coverage "page_68-80" ;
+    dcterms:source "위기경보수준별조치사항.pdf" .
+
+###### 1단계: 관심
+
+ex:위기경보수준별조치사항_1_관심 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 1 관심"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    dcterms:coverage "page_68-69" ;
+    dcterms:source "위기경보수준별조치사항.pdf" .
+
+# 하위 세부 조치 항목 및 역할은 문서에 근거 불충분하여 생성 제외
+
+###### 2단계: 주의
+
+ex:위기경보수준별조치사항_2_주의 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 2 주의"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    dcterms:coverage "page_70-72" ;
+    dcterms:source "위기경보수준별조치사항.pdf" .
+
+# 하위 세부 조치 항목은 생성 근거 불충분하여 생략
+
+###### 3단계: 경계
+
+ex:위기경보수준별조치사항_3_경계 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 3 경계"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    dcterms:coverage "page_72-75" ;
+    dcterms:source "위기경보수준별조치사항.pdf" .
+
+# 3단계 하위 상세 항목 예시 (조치목록에서 명확한 근거 있는 항목만 생성)
+
+ex:위기경보수준별조치사항_3_경계_가_비상근무_상향조정 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 3 경계 가 비상근무 상향 조정"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계 ;
+    dcterms:coverage "page_72" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "본사 전부서 비상근무 상향 조정 및 부서별 필수인원 비상근무 실시"@ko .
+
+ex:위기경보수준별조치사항_3_경계_나_부서별_임무_및_역할 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 3 경계 나 부서별 임무 및 역할"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_3_경계 ;
+    dcterms:coverage "page_72-75" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "재난안전상황실, 총무고객처, 건설자산관리처, 매입자산관리처 임무와 역할 기술"@ko .
+
+###### 4단계: 심각
+
+ex:위기경보수준별조치사항_4_심각 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 4 심각"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항 ;
+    dcterms:coverage "page_74-80" ;
+    dcterms:source "위기경보수준별조치사항.pdf" .
+
+# 4단계 하위 세부 조치 목록 (근거 있는 항목만 생성)
+
+ex:위기경보수준별조치사항_4_심각_가_경보_및_상황접수 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 4 심각 가 경보 및 상황 접수"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각 ;
+    dcterms:coverage "page_74-75" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "'심각'경보 접수 및 풍수해 대규모 재난발생 상황 접수"@ko .
+
+ex:위기경보수준별조치사항_4_심각_나_보고_및_전파 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 4 심각 나 보고 및 전파"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각 ;
+    dcterms:coverage "page_74-75" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "지역본부 및 사업소 상황 전파, 유관기관 상황 전파"@ko .
+
+ex:위기경보수준별조치사항_4_심각_다_조치 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 4 심각 다 조치"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각 ;
+    dcterms:coverage "page_74-80" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "3단계 상황판단회의 개최, 피해상황 파악, 사고지원본부 운영, 필요자원 파악 및 지원 등"@ko .
+
+ex:위기경보수준별조치사항_4_심각_다_조치_세부사항 a owl:Class ;
+    rdfs:label "위기경보수준별조치사항 4 심각 다 조치 세부사항"@ko ;
+    rdfs:subClassOf ex:위기경보수준별조치사항_4_심각_다_조치 ;
+    dcterms:coverage "page_74-80" ;
+    dcterms:source "위기경보수준별조치사항.pdf" ;
+    rdfs:comment "구체적 조치 목록: 재난현장 필요자원 파악 및 지원, 피해확산 방지, 현장대응 자원 지원, 경영진 지시 이행"@ko .
+
+###### Annotation Property 정의
+
+ex:페이지정보 a owl:AnnotationProperty ;
+    rdfs:label "페이지정보"@ko .
+
+ex:섹션정보 a owl:AnnotationProperty ;
+    rdfs:label "섹션정보"@ko .# End of TTL File

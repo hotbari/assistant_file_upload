@@ -1,0 +1,53 @@
+@prefix : <http://example.org/crisis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:위기경보_수준 rdf:type owl:Class .
+:관심 rdf:type owl:Class ;
+    rdfs:subClassOf :위기경보_수준 .
+:주의 rdf:type owl:Class ;
+    rdfs:subClassOf :위기경보_수준 .
+:경계 rdf:type owl:Class ;
+    rdfs:subClassOf :위기경보_수준 .
+:심각 rdf:type owl:Class ;
+    rdfs:subClassOf :위기경보_수준 .
+
+:상황 rdf:type owl:Class .
+:조치목록 rdf:type owl:Class .
+:조치내용 rdf:type owl:Class .
+:부서별_임무와_역할 rdf:type owl:Class .
+
+:경보_접수 rdf:type owl:Class .
+:보고_및_전파 rdf:type owl:Class .
+:조치 rdf:type owl:Class .
+
+# 관계(Property) 정의
+:has_상황 rdf:type owl:ObjectProperty ;
+    rdfs:domain :위기경보_수준 ;
+    rdfs:range :상황 .
+
+:has_조치목록 rdf:type owl:ObjectProperty ;
+    rdfs:domain :위기경보_수준 ;
+    rdfs:range :조치목록 .
+
+:has_조치내용 rdf:type owl:ObjectProperty ;
+    rdfs:domain :조치목록 ;
+    rdfs:range :조치내용 .
+
+:has_부서별_임무_역할 rdf:type owl:ObjectProperty ;
+    rdfs:domain :위기경보_수준 ;
+    rdfs:range :부서별_임무와_역할 .
+
+:has_조치_경보접수 rdf:type owl:ObjectProperty ;
+    rdfs:domain :조치내용 ;
+    rdfs:range :경보_접수 .
+
+:has_조치_보고전파 rdf:type owl:ObjectProperty ;
+    rdfs:domain :조치내용 ;
+    rdfs:range :보고_및_전파 .
+
+:has_조치_조치 rdf:type owl:ObjectProperty ;
+    rdfs:domain :조치내용 ;
+    rdfs:range :조치 .# End of TTL File
