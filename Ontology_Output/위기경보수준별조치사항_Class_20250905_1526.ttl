@@ -1,0 +1,261 @@
+@prefix : <http://example.org/crisis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Ontology Declaration
+#################################################################
+
+:위기경보_온톨로지 rdf:type owl:Ontology ;
+    rdfs:comment "위기경보 수준별 조치사항에 대한 온톨로지"@ko .
+
+#################################################################
+# 클래스 정의(Class Definitions)
+#################################################################
+
+### 위기경보 수준 최상위 클래스
+:Level rdf:type owl:Class ;
+    rdfs:label "위기경보 수준"@ko ;
+    rdfs:comment "위기경보 단계의 최상위 클래스"@ko .
+
+# 각 단계별 Level 클래스
+:관심 rdf:type owl:Class ;
+    rdfs:subClassOf :Level ;
+    rdfs:label "관심 위기경보"@ko .
+
+:주의 rdf:type owl:Class ;
+    rdfs:subClassOf :Level ;
+    rdfs:label "주의 위기경보"@ko .
+
+:경계 rdf:type owl:Class ;
+    rdfs:subClassOf :Level ;
+    rdfs:label "경계 위기경보"@ko .
+
+:심각 rdf:type owl:Class ;
+    rdfs:subClassOf :Level ;
+    rdfs:label "심각 위기경보"@ko .
+
+### 상황 (Situation)
+:Situation rdf:type owl:Class ;
+    rdfs:label "상황"@ko ;
+    rdfs:comment "각 위기경보 단계별 상황 설명"@ko .
+
+# 각 단계별 상황 하위클래스
+:관심_상황 rdf:type owl:Class ;
+    rdfs:subClassOf :Situation , :관심 ;
+    rdfs:label "관심 상황"@ko .
+
+:주의_상황 rdf:type owl:Class ;
+    rdfs:subClassOf :Situation , :주의 ;
+    rdfs:label "주의 상황"@ko .
+
+:경계_상황 rdf:type owl:Class ;
+    rdfs:subClassOf :Situation , :경계 ;
+    rdfs:label "경계 상황"@ko .
+
+:심각_상황 rdf:type owl:Class ;
+    rdfs:subClassOf :Situation , :심각 ;
+    rdfs:label "심각 상황"@ko .
+
+### 조치목록 (ActionList)
+:ActionList rdf:type owl:Class ;
+    rdfs:label "조치목록"@ko ;
+    rdfs:comment "각 위기경보 단계별 조치목록"@ko .
+
+:관심_조치목록 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionList , :관심 ;
+    rdfs:label "관심 조치목록"@ko .
+
+:주의_조치목록 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionList , :주의 ;
+    rdfs:label "주의 조치목록"@ko .
+
+:경계_조치목록 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionList , :경계 ;
+    rdfs:label "경계 조치목록"@ko .
+
+:심각_조치목록 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionList , :심각 ;
+    rdfs:label "심각 조치목록"@ko .
+
+### 조치내용 (ActionDetail)
+:ActionDetail rdf:type owl:Class ;
+    rdfs:label "조치내용"@ko ;
+    rdfs:comment "각 위기경보 단계별 세부 조치내용"@ko .
+
+:관심_조치내용 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionDetail , :관심 ;
+    rdfs:label "관심 조치내용"@ko .
+
+:주의_조치내용 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionDetail , :주의 ;
+    rdfs:label "주의 조치내용"@ko .
+
+:경계_조치내용 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionDetail , :경계 ;
+    rdfs:label "경계 조치내용"@ko .
+
+:심각_조치내용 rdf:type owl:Class ;
+    rdfs:subClassOf :ActionDetail , :심각 ;
+    rdfs:label "심각 조치내용"@ko .
+
+### 부서별 임무와 역할 (Roles)
+:Roles rdf:type owl:Class ;
+    rdfs:label "부서별 임무와 역할"@ko ;
+    rdfs:comment "단계별 부서 임무 및 역할 설명"@ko .
+
+:관심_부서역할 rdf:type owl:Class ;
+    rdfs:subClassOf :Roles , :관심 ;
+    rdfs:label "관심 부서별 임무와 역할"@ko .
+
+:주의_부서역할 rdf:type owl:Class ;
+    rdfs:subClassOf :Roles , :주의 ;
+    rdfs:label "주의 부서별 임무와 역할"@ko .
+
+:경계_부서역할 rdf:type owl:Class ;
+    rdfs:subClassOf :Roles , :경계 ;
+    rdfs:label "경계 부서별 임무와 역할"@ko .
+
+:심각_부서역할 rdf:type owl:Class ;
+    rdfs:subClassOf :Roles , :심각 ;
+    rdfs:label "심각 부서별 임무와 역할"@ko .
+
+#################################################################
+# 추가 subclass 보완 (세부 개념 반영)
+#################################################################
+
+# 공통 조치내용 내 세부 조치 subclass (ex: 경보접수, 보고 및 전파, 조치)
+:조치_경보접수 rdf:type owl:Class ;
+    rdfs:label "경보 접수"@ko ;
+    rdfs:comment "경보 및 상황 접수 관련 조치"@ko ;
+    rdfs:subClassOf :ActionDetail .
+
+:조치_보고및전파 rdf:type owl:Class ;
+    rdfs:label "보고 및 전파"@ko ;
+    rdfs:comment "보고 및 상황 전파 관련 조치"@ko ;
+    rdfs:subClassOf :ActionDetail .
+
+:조치_조치 rdf:type owl:Class ;
+    rdfs:label "조치"@ko ;
+    rdfs:comment "구체적 조치 관련 항목"@ko ;
+    rdfs:subClassOf :ActionDetail .
+
+# 단계별 조치내용 내 하위조치 subclass 추가
+
+## '관심' 단계 세부조치 subclass
+:관심_경보접수 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_경보접수 , :관심_조치내용 ;
+    rdfs:label "관심 경보 접수"@ko .
+
+:관심_보고및전파 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_보고및전파 , :관심_조치내용 ;
+    rdfs:label "관심 보고 및 전파"@ko .
+
+:관심_조치 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_조치 , :관심_조치내용 ;
+    rdfs:label "관심 조치"@ko .
+
+## '주의' 단계 세부조치 subclass
+:주의_경보및상황접수 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_경보접수 , :주의_조치내용 ;
+    rdfs:label "주의 경보 및 상황 접수"@ko .
+
+:주의_보고및전파 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_보고및전파 , :주의_조치내용 ;
+    rdfs:label "주의 보고 및 전파"@ko .
+
+:주의_조치 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_조치 , :주의_조치내용 ;
+    rdfs:label "주의 조치"@ko .
+
+## '경계' 단계 세부조치 subclass
+:경계_경보및상황접수 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_경보접수 , :경계_조치내용 ;
+    rdfs:label "경계 경보 및 상황 접수"@ko .
+
+:경계_보고및전파 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_보고및전파 , :경계_조치내용 ;
+    rdfs:label "경계 보고 및 전파"@ko .
+
+:경계_조치 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_조치 , :경계_조치내용 ;
+    rdfs:label "경계 조치"@ko .
+
+## '심각' 단계 세부조치 subclass
+:심각_경보및상황접수 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_경보접수 , :심각_조치내용 ;
+    rdfs:label "심각 경보 및 상황 접수"@ko .
+
+:심각_보고및전파 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_보고및전파 , :심각_조치내용 ;
+    rdfs:label "심각 보고 및 전파"@ko .
+
+:심각_조치 rdf:type owl:Class ;
+    rdfs:subClassOf :조치_조치 , :심각_조치내용 ;
+    rdfs:label "심각 조치"@ko .
+
+#################################################################
+# 부서 역할에 대한 subclass 보완
+#################################################################
+
+:재난안전상황실 rdf:type owl:Class ;
+    rdfs:label "재난안전상황실"@ko ;
+    rdfs:comment "재난안전상황실 관련 역할"@ko ;
+    rdfs:subClassOf :Roles .
+
+:건설자산관리처 rdf:type owl:Class ;
+    rdfs:label "건설자산관리처"@ko ;
+    rdfs:comment "건설자산관리처 관련 역할"@ko ;
+    rdfs:subClassOf :Roles .
+
+:매입자산관리처 rdf:type owl:Class ;
+    rdfs:label "매입자산관리처"@ko ;
+    rdfs:comment "매입자산관리처 관련 역할"@ko ;
+    rdfs:subClassOf :Roles .
+
+:안전기획단 rdf:type owl:Class ;
+    rdfs:label "안전기획단"@ko ;
+    rdfs:comment "안전기획단 관련 역할"@ko ;
+    rdfs:subClassOf :Roles .
+
+:경영진 rdf:type owl:Class ;
+    rdfs:label "경영진"@ko ;
+    rdfs:comment "경영진 관련 역할"@ko ;
+    rdfs:subClassOf :Roles .
+
+# 단계별 부서 역할 연결(예: 심각 단계 내 재난안전상황실 역할)
+:심각_재난안전상황실 rdf:type owl:Class ;
+    rdfs:subClassOf :재난안전상황실 , :심각_부서역할 ;
+    rdfs:label "심각 단계 재난안전상황실 역할"@ko .
+
+:심각_건설자산관리처 rdf:type owl:Class ;
+    rdfs:subClassOf :건설자산관리처 , :심각_부서역할 ;
+    rdfs:label "심각 단계 건설자산관리처 역할"@ko .
+
+:심각_매입자산관리처 rdf:type owl:Class ;
+    rdfs:subClassOf :매입자산관리처 , :심각_부서역할 ;
+    rdfs:label "심각 단계 매입자산관리처 역할"@ko .
+
+:심각_안전기획단 rdf:type owl:Class ;
+    rdfs:subClassOf :안전기획단 , :심각_부서역할 ;
+    rdfs:label "심각 단계 안전기획단 역할"@ko .
+
+:심각_경영진 rdf:type owl:Class ;
+    rdfs:subClassOf :경영진 , :심각_부서역할 ;
+    rdfs:label "심각 단계 경영진 역할"@ko .
+
+#################################################################
+# 객체 속성 예시
+#################################################################
+
+:hasSubAction rdf:type owl:ObjectProperty ;
+    rdfs:domain :ActionDetail ;
+    rdfs:range :ActionDetail ;
+    rdfs:label "하위 조치내용 보유"@ko .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:domain :Roles ;
+    rdfs:range :Roles ;
+    rdfs:label "관련 부서 역할 포함"@ko .# End of TTL File
